@@ -18,9 +18,9 @@ These are no longer placeholders:
 
 ## Photos
 
-- Hero: `[Shop photo placeholder — exterior]`
+- The hero uses the shop logo, not a storefront photo. Real shop photos can be added later.
 - Hours and location: `[Shop photo placeholder — interior or work area]`
-- `og:image` is omitted until a real shop photo exists. Noted in a comment in `index.html`.
+- `og:image` and the JSON-LD `logo` point at `img/logo-og.png`. Make both URLs absolute when the production domain is confirmed.
 
 ## Domain
 

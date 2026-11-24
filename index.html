@@ -11,16 +11,22 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="application-name" content="Gray Commercial Tire and Auto">
   <!-- PLACEHOLDER: production domain is unknown, so canonical and og:url are omitted. Update sitemap.xml and robots.txt when the domain is confirmed. -->
-  <!-- PLACEHOLDER: og:image omitted until a photo of this shop exists. -->
+  <!-- PLACEHOLDER: make og:image and the JSON-LD logo URL absolute when the production domain is confirmed. -->
   <meta property="og:site_name" content="Gray Commercial Tire and Auto">
   <meta property="og:title" content="Gray Commercial Tire and Auto | Tires &amp; Repair in Gray, GA">
   <meta property="og:description" content="Passenger, commercial, and agricultural tires, brakes, alignments, and mechanical repair at 121 Homer Roberts Rd, Gray, GA. Call (478) 936-0014.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="img/logo-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gray Commercial Tire and Auto logo">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Gray Commercial Tire and Auto | Tires &amp; Repair in Gray, GA">
   <meta name="twitter:description" content="Passenger, commercial, and agricultural tires, brakes, alignments, and mechanical repair at 121 Homer Roberts Rd, Gray, GA. Call (478) 936-0014.">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="img/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
   <!-- Saturday and Sunday are closed, so they are omitted from openingHoursSpecification. That block is Monday–Friday 08:00–18:00 only. Geo coordinates are the U.S. Census Bureau Public AR Current address-range match for 121 Homer Roberts Rd, Gray, GA 31032 (interpolated along the 101–123 range), retrieved 2026-11-24. -->
   <script type="application/ld+json">
@@ -28,6 +34,7 @@
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Gray Commercial Tire and Auto",
+    "logo": "img/logo-og.png",
     "description": "Gray Commercial Tire and Auto is at 121 Homer Roberts Rd, Gray, GA 31032. The shop works on passenger, commercial, and agricultural tires and wheels, and on mechanical repair that includes oil changes, brakes, front end, diagnostics, diesel DPF/EGR, alignments, lift and leveling kits, bumpers, tire balancing, tire rotation, suspension, general mechanical repair, and roadside service.",
     "telephone": "+1-478-936-0014",
     "address": {
@@ -169,41 +176,50 @@
   }
   </script>
 </head>
-<body>
+<body data-hero="true">
+  <div class="top-sentinel" aria-hidden="true"></div>
   <a class="skip" href="#content">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="logo" href="index.html" aria-label="Gray Commercial Tire and Auto, home">
-        <svg class="logo-mark" viewBox="0 0 36 36" aria-hidden="true">
-          <circle cx="18" cy="18" r="17" fill="#24303a"/>
-          <circle cx="18" cy="18" r="10" fill="none" stroke="#dc143c" stroke-width="2"/>
-          <circle cx="18" cy="18" r="2.4" fill="#7a8a99"/>
-          <path d="M18 8.2v3.1M18 24.7V27.8M8.2 18h3.1M24.7 18h3.1" stroke="#7a8a99" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <span class="logo-name">
-          <span class="logo-line">Gray Commercial</span>
-          <span class="logo-line">Tire and Auto</span>
-        </span>
+  <header class="site-header is-solid has-logo" id="site-header">
+    <div class="wrap header-bar">
+      <a class="logo" href="index.html">
+        <picture>
+          <source srcset="img/logo-header.webp" type="image/webp">
+          <img src="img/logo-header.png" alt="Gray Commercial Tire and Auto" width="364" height="160">
+        </picture>
       </a>
-      <a class="btn btn-primary header-call" href="tel:+14789360014" aria-label="Call Gray Commercial Tire and Auto at (478) 936-0014">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6.2 3.8h3.1L11 8.2 8.8 9.5a12 12 0 0 0 5.7 5.7l1.3-2.2 4.4 1.7v3.1a1.5 1.5 0 0 1-1.6 1.5A15.2 15.2 0 0 1 4.7 5.4 1.5 1.5 0 0 1 6.2 3.8z"/></svg>
-        <span class="call-short">Call</span>
-        <span class="call-full">(478) 936-0014</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <svg class="icon icon-open" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
-      </button>
-      <nav class="site-nav" id="site-nav" aria-label="Page">
-        <a href="#services">Services</a>
-        <a href="#details">Details</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
-        <a href="#hours">Hours</a>
-        <a href="#contact">Quote</a>
-      </nav>
+      <div class="header-cluster">
+        <nav class="site-nav" id="site-nav" aria-label="Page">
+          <a href="#services">Services</a>
+          <a href="#details">Details</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+          <a href="#hours">Hours</a>
+          <a href="#contact">Quote</a>
+        </nav>
+        <a class="btn btn-primary header-call" href="tel:+14789360014" aria-label="Call Gray Commercial Tire and Auto at (478) 936-0014">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6.2 3.8h3.1L11 8.2 8.8 9.5a12 12 0 0 0 5.7 5.7l1.3-2.2 4.4 1.7v3.1a1.5 1.5 0 0 1-1.6 1.5A15.2 15.2 0 0 1 4.7 5.4 1.5 1.5 0 0 1 6.2 3.8z"/></svg>
+          <span class="call-short">Call</span>
+          <span class="call-full">(478) 936-0014</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg class="icon icon-open" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
+  <script>
+    (function () {
+      var header = document.getElementById("site-header");
+      if (!header || !document.body.dataset.hero || window.scrollY > 8) return;
+      header.classList.remove("is-solid", "has-logo");
+      var logo = header.querySelector(".logo");
+      if (logo) {
+        logo.setAttribute("aria-hidden", "true");
+        logo.setAttribute("tabindex", "-1");
+      }
+    })();
+  </script>
 
   <main id="content">
     <section class="hero" aria-labelledby="hero-heading">
@@ -220,16 +236,11 @@
             <a class="btn btn-ghost" href="#contact">Request a quote</a>
           </div>
         </div>
-        <div class="photo-slot">
-          <svg class="photo-wheel" viewBox="0 0 200 200" aria-hidden="true">
-            <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="8"/>
-            <circle cx="100" cy="100" r="18" fill="none" stroke="currentColor" stroke-width="8"/>
-            <path d="M100 22v28M100 150v28M22 100h28M150 100h28M45 45l18 18M137 45l-18 18M45 155l18-18M137 155l-18-18" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-          </svg>
-          <div class="photo-copy" data-nosnippet>
-            <p><span class="mark">[Shop photo placeholder — exterior]</span></p>
-            <p>Replace this frame with a photo of this shop before launch.</p>
-          </div>
+        <div class="hero-logo" id="hero-logo">
+          <picture>
+            <source srcset="img/logo-hero.webp" type="image/webp">
+            <img src="img/logo-hero.png" alt="" width="1100" height="484">
+          </picture>
         </div>
       </div>
     </section>

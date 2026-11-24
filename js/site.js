@@ -32,6 +32,41 @@
     });
   }
 
+  var header = document.getElementById("site-header");
+  var heroLogo = document.getElementById("hero-logo");
+  var sentinel = document.querySelector(".top-sentinel");
+  var logoLink = header ? header.querySelector(".logo") : null;
+
+  function setHeaderLogo(show) {
+    if (!header) return;
+    header.classList.toggle("has-logo", show);
+    if (logoLink) {
+      logoLink.setAttribute("aria-hidden", show ? "false" : "true");
+      if (show) logoLink.removeAttribute("tabindex");
+      else logoLink.setAttribute("tabindex", "-1");
+    }
+  }
+
+  if (header && "IntersectionObserver" in window) {
+    if (sentinel) {
+      var solidObserver = new IntersectionObserver(function (entries) {
+        header.classList.toggle("is-solid", !entries[0].isIntersecting);
+      }, { threshold: 0 });
+      solidObserver.observe(sentinel);
+    } else {
+      header.classList.add("is-solid");
+    }
+    if (heroLogo) {
+      var headerHeight = Math.round(header.getBoundingClientRect().height) || 80;
+      var logoObserver = new IntersectionObserver(function (entries) {
+        setHeaderLogo(!entries[0].isIntersecting);
+      }, { threshold: 0, rootMargin: "-" + headerHeight + "px 0px 0px 0px" });
+      logoObserver.observe(heroLogo);
+    } else {
+      setHeaderLogo(true);
+    }
+  }
+
   var mapButton = document.querySelector("[data-load-map]");
   if (mapButton) {
     mapButton.addEventListener("click", function () {
