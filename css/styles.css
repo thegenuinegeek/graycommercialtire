@@ -111,6 +111,7 @@ p + p { margin-top: 0.85rem; }
 
 .wrap {
   width: min(var(--wrap), calc(100% - 2.5rem));
+  max-width: var(--wrap);
   margin-inline: auto;
 }
 
@@ -348,10 +349,16 @@ p + p { margin-top: 0.85rem; }
   pointer-events: none;
 }
 
+.hero > .wrap {
+  width: min(var(--wrap), calc(100% - 2.5rem));
+  max-width: var(--wrap);
+  margin-inline: auto;
+  flex: 0 1 auto;
+}
+
 .hero-grid {
   display: grid;
   gap: 2.5rem;
-  width: 100%;
   align-items: center;
 }
 
