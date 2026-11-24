@@ -452,24 +452,6 @@ p + p { margin-top: 0.85rem; }
   min-height: 220px;
 }
 
-.hero-logo::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 140%;
-  aspect-ratio: 1;
-  height: auto;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle closest-side,
-    rgba(220, 20, 60, 0.32) 0%,
-    rgba(220, 20, 60, 0.1) 42%,
-    rgba(220, 20, 60, 0) 100%
-  );
-  pointer-events: none;
-}
-
 .hero-logo img {
   position: relative;
   width: 78vw;
