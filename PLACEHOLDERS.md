@@ -46,4 +46,4 @@ These are no longer placeholders:
 
 ## Left out on purpose
 
-These were not verified, so they are not on the site: years in business, certifications, warranties, tire or parts brands, and prices. Roadside coverage area and response time were not provided, so they are not stated either.
+These were not verified, so they are not on the site: diesel DPF/EGR work, years in business, certifications, warranties, tire or parts brands, and prices. Roadside coverage area and response time were not provided, so they are not stated either.
