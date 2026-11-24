@@ -86,6 +86,25 @@
     });
   }
 
+  var revealNodes = document.querySelectorAll(".reveal");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (revealNodes.length && !reduceMotion && "IntersectionObserver" in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    Array.prototype.forEach.call(revealNodes, function (node) {
+      revealObserver.observe(node);
+    });
+  } else {
+    Array.prototype.forEach.call(revealNodes, function (node) {
+      node.classList.add("is-in");
+    });
+  }
+
   var preview = document.getElementById("thanks-preview");
   var live = document.getElementById("thanks-live");
   if (preview && live && new URLSearchParams(window.location.search).get("preview") === "local") {

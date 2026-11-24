@@ -209,6 +209,7 @@
   </header>
   <script>
     (function () {
+      document.documentElement.classList.add("js");
       var header = document.getElementById("site-header");
       if (!header || !document.body.dataset.hero || window.scrollY > 8) return;
       header.classList.remove("is-solid", "has-logo");
@@ -221,19 +222,19 @@
   </script>
 
   <main id="content">
-    <section class="hero" aria-labelledby="hero-heading">
+    <section class="hero band" aria-labelledby="hero-heading">
       <div class="wrap hero-grid">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">Gray, Georgia</p>
           <h1 id="hero-heading">From the farm to the fleet, we keep <span class="accent">Gray rolling</span>.</h1>
-          <p class="lead">Commercial, agricultural and passenger tires, plus brakes, alignments and full mechanical repair. Roadside help when you're stuck.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+14789360014">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6.2 3.8h3.1L11 8.2 8.8 9.5a12 12 0 0 0 5.7 5.7l1.3-2.2 4.4 1.7v3.1a1.5 1.5 0 0 1-1.6 1.5A15.2 15.2 0 0 1 4.7 5.4 1.5 1.5 0 0 1 6.2 3.8z"/></svg>
               Call (478) 936-0014
             </a>
-            <a class="btn btn-ghost" href="#contact">Request a quote</a>
+            <a class="btn btn-ghost" href="#contact">Get a quote</a>
           </div>
+          <p class="lead">Commercial, agricultural and passenger tires, plus brakes, alignments and full mechanical repair. Roadside help when you're stuck.</p>
         </div>
         <div class="hero-logo" id="hero-logo">
           <picture>
@@ -242,57 +243,61 @@
           </picture>
         </div>
       </div>
+      <div class="shape" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#ffffff" d="M0,42 C240,78 460,8 720,34 C980,60 1200,14 1440,40 L1440,80 L0,80 Z"/></svg></div>
     </section>
 
-    <section class="trust" aria-label="Shop at a glance">
+    <section class="trust band" aria-label="Shop at a glance">
       <div class="wrap trust-grid">
         <a href="#reviews">
           <span class="trust-kicker">Google</span>
           <span class="trust-value">4.9★ on Google</span>
-          <span class="trust-note">About 4.9 stars</span>
+        </a>
+        <a href="#hours">
+          <span class="trust-kicker">Open</span>
+          <span class="trust-value">Mon–Fri 8–6</span>
+          <span class="trust-note">Sat–Sun: Closed</span>
         </a>
         <a href="#services">
-          <span class="trust-kicker">Tires</span>
-          <span class="trust-value">Commercial &amp; agricultural tires</span>
-          <span class="trust-note">Plus passenger tires and wheels</span>
-        </a>
-        <a href="#services">
-          <span class="trust-kicker">Also offered</span>
+          <span class="trust-kicker">On the road</span>
           <span class="trust-value">Roadside service</span>
-          <span class="trust-note">Help away from the shop</span>
+          <span class="trust-note">Available</span>
+        </a>
+        <a href="#hours">
+          <span class="trust-kicker">Shop</span>
+          <span class="trust-value">Gray, GA</span>
+          <span class="trust-note">121 Homer Roberts Rd</span>
         </a>
       </div>
+      <div class="shape" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none"><path fill="#e7edf1" d="M0,72 L1440,8 L1440,72 Z"/></svg></div>
     </section>
 
-    <section class="section" id="services" aria-labelledby="services-heading">
+    <section class="section section-mist band reveal" id="services" aria-labelledby="services-heading">
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">At the shop</p>
           <h2 id="services-heading">Services</h2>
           <p class="intro">Cars, farm equipment, and work trucks. Call (478) 936-0014 or ask for a quote.</p>
         </div>
-        <div class="categories">
-          <article class="category">
-            <div class="cat-copy">
-              <div class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.2"/><path d="M12 4v2.5M12 17.5V20M4 12h2.5M17.5 12H20"/></svg></div>
-              <h3>Tires and wheels</h3>
-              <p>Passenger, commercial, and agricultural tires and wheels, plus balancing and rotation.</p>
-            </div>
-            <div class="service-list">
+        <div class="offer-grid">
+          <article class="offer">
+            <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.2"/><path d="M12 4v2.5M12 17.5V20M4 12h2.5M17.5 12H20"/></svg></div>
+            <h3>Tires and wheels</h3>
+            <p>Passenger, commercial, and agricultural tires and wheels, plus balancing and rotation.</p>
+            <details class="more">
+              <summary>Learn more</summary>
               <div class="service"><h4>Passenger tires and wheels</h4><p>Tires and wheels for passenger cars and light trucks.</p></div>
               <div class="service"><h4>Commercial tires and wheels</h4><p>Tires and wheels for commercial vehicles.</p></div>
               <div class="service"><h4>Agricultural tires and wheels</h4><p>Tires and wheels for agricultural equipment.</p></div>
               <div class="service"><h4>Tire balancing</h4><p>Balancing tires and wheels.</p></div>
               <div class="service"><h4>Tire rotation</h4><p>Rotating tires to different positions on the vehicle.</p></div>
-            </div>
+            </details>
           </article>
-          <article class="category">
-            <div class="cat-copy">
-              <div class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a3.2 3.2 0 0 0-4.4 4.5L4.5 16.6 7.4 19.5l5.8-5.8a3.2 3.2 0 0 0 4.5-4.4L15.2 11.8 12.2 8.8l2.5-2.5z"/></svg></div>
-              <h3>Maintenance and repair</h3>
-              <p>Oil, brakes, front end, diagnostics, alignments, suspension, and general mechanical repair.</p>
-            </div>
-            <div class="service-list">
+          <article class="offer">
+            <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a3.2 3.2 0 0 0-4.4 4.5L4.5 16.6 7.4 19.5l5.8-5.8a3.2 3.2 0 0 0 4.5-4.4L15.2 11.8 12.2 8.8l2.5-2.5z"/></svg></div>
+            <h3>Maintenance and repair</h3>
+            <p>Oil, brakes, front end, diagnostics, alignments, suspension, and general mechanical repair.</p>
+            <details class="more">
+              <summary>Learn more</summary>
               <div class="service"><h4>Oil changes</h4><p>Draining used engine oil and refilling the engine with new oil.</p></div>
               <div class="service"><h4>Brakes</h4><p>Service for vehicle brakes.</p></div>
               <div class="service"><h4>Front end</h4><p>Service for the front end of the vehicle.</p></div>
@@ -300,199 +305,47 @@
               <div class="service"><h4>Alignments</h4><p>Setting the wheel alignment on a vehicle.</p></div>
               <div class="service"><h4>Suspension</h4><p>Service for the suspension.</p></div>
               <div class="service"><h4>General mechanical repair</h4><p>Mechanical repair that is not limited to the jobs named above.</p></div>
-            </div>
+            </details>
           </article>
-          <article class="category">
-            <div class="cat-copy">
-              <div class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19h15"/><path d="M7 19v-3.5h10V19"/><path d="M12 12.5V6"/><path d="M8.8 8.6 12 5.4l3.2 3.2"/></svg></div>
-              <h3>Lift, leveling, and truck upgrades</h3>
-              <p>Lift kits, leveling kits, and bumpers.</p>
-            </div>
-            <div class="service-list">
+          <article class="offer">
+            <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19h15"/><path d="M7 19v-3.5h10V19"/><path d="M12 12.5V6"/><path d="M8.8 8.6 12 5.4l3.2 3.2"/></svg></div>
+            <h3>Lift, leveling, and truck upgrades</h3>
+            <p>Lift kits, leveling kits, and bumpers.</p>
+            <details class="more">
+              <summary>Learn more</summary>
               <div class="service"><h4>Lift and leveling kits</h4><p>Lift kits and leveling kits, which raise or level a vehicle.</p></div>
               <div class="service"><h4>Bumpers</h4><p>Service for bumpers.</p></div>
-            </div>
+            </details>
           </article>
-          <article class="category">
-            <div class="cat-copy">
-              <div class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.2 20.2 19H3.8L12 4.2z"/><path d="M12 10v4.2"/><path d="M12 16.8h.01"/></svg></div>
-              <h3>Roadside</h3>
-              <p>Roadside service when a vehicle needs help away from the shop.</p>
-            </div>
-            <div class="service-list">
+          <article class="offer">
+            <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.2 20.2 19H3.8L12 4.2z"/><path d="M12 10v4.2"/><path d="M12 16.8h.01"/></svg></div>
+            <h3>Roadside</h3>
+            <p>Roadside service when a vehicle needs help away from the shop.</p>
+            <details class="more">
+              <summary>Learn more</summary>
               <div class="service"><h4>Roadside Service</h4><p>Roadside service for a vehicle that needs help away from the shop.</p></div>
-            </div>
+            </details>
           </article>
         </div>
       </div>
+      <div class="shape" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#161d24" d="M0,28 C360,78 900,0 1440,48 L1440,80 L0,80 Z"/></svg></div>
     </section>
 
-    <section class="section section-dark" id="details" aria-labelledby="details-heading">
-      <div class="wrap">
-        <p class="eyebrow">Right here in Gray</p>
-        <h2 id="details-heading">Shop details</h2>
-        <p class="intro">Here’s what we can say for sure. Anything still open is marked in brackets.</p>
-        <div class="detail-grid">
-          <div class="detail">
-            <h3>Tires and repair at one address</h3>
-            <p>Passenger, commercial, and agricultural tires and wheels, the mechanical services on this page, and roadside service are offered at 121 Homer Roberts Rd in Gray.</p>
-          </div>
-          <div class="detail">
-            <h3>Weekday hours are posted</h3>
-            <p>Monday through Friday, 8 AM to 6 PM. Sat-Sun: Closed.</p>
-          </div>
-          <div class="detail">
-            <h3>About 4.9 stars on Google</h3>
-            <p>The public Google rating is about 4.9 stars. The review count is still <span class="mark">[review count placeholder]</span>.</p>
-          </div>
-          <div class="detail">
-            <h3>Towns the shop serves</h3>
-            <p>The shop serves Gray, Jones County, and the Macon and Milledgeville area.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="reviews" aria-labelledby="reviews-heading">
-      <div class="wrap">
-        <p class="eyebrow">Google</p>
-        <h2 id="reviews-heading">Google rating</h2>
-        <p class="rating-display"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gray+Commercial+Tire+and+Auto%2C+121+Homer+Roberts+Rd%2C+Gray%2C+GA+31032" target="_blank" rel="noopener noreferrer">4.9★ on Google<span class="sr-only"> (opens in a new tab)</span></a></p>
-        <p class="intro">The Google rating is about 4.9 stars. Google review count: <span class="mark">[review count placeholder]</span>. Review wording is not printed here until it is copied from the Google listing.</p>
-        <div class="review-grid">
-          <div class="review-card" data-nosnippet>
-            <p><span class="mark">[Customer review placeholder]</span></p>
-            <p>Review slot 1 of 3. Paste a Google review here before launch.</p>
-          </div>
-          <div class="review-card" data-nosnippet>
-            <p><span class="mark">[Customer review placeholder]</span></p>
-            <p>Review slot 2 of 3. Paste a Google review here before launch.</p>
-          </div>
-          <div class="review-card" data-nosnippet>
-            <p><span class="mark">[Customer review placeholder]</span></p>
-            <p>Review slot 3 of 3. Paste a Google review here before launch.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq" aria-labelledby="faq-heading">
-      <div class="wrap">
-        <p class="eyebrow">Answers</p>
-        <h2 id="faq-heading">Questions</h2>
-        <div class="faq-list">
-          <details class="faq">
-            <summary><span class="faq-q">Where is Gray Commercial Tire and Auto?</span></summary>
-            <div class="faq-panel"><p class="faq-a">Gray Commercial Tire and Auto is at 121 Homer Roberts Rd, Gray, GA 31032.</p></div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-q">What is the phone number for Gray Commercial Tire and Auto?</span></summary>
-            <div class="faq-panel"><p class="faq-a">The main number is (478) 936-0014.</p></div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-q">What hours is Gray Commercial Tire and Auto open?</span></summary>
-            <div class="faq-panel"><p class="faq-a">Monday through Friday, the shop is open from 8 AM to 6 PM. Sat-Sun: Closed.</p></div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-q">What services does Gray Commercial Tire and Auto offer?</span></summary>
-            <div class="faq-panel"><p class="faq-a">The shop offers passenger, commercial, and agricultural tires and wheels, oil changes, brakes, front end work, diagnostics, alignments, lift and leveling kits, bumpers, tire balancing, tire rotation, suspension service, general mechanical repair, and roadside service.</p></div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-q">Does Gray Commercial Tire and Auto work on commercial and agricultural tires?</span></summary>
-            <div class="faq-panel"><p class="faq-a">Yes. The shop works on commercial tires and wheels and on agricultural tires and wheels, along with passenger tires and wheels.</p></div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-q">Which areas does Gray Commercial Tire and Auto serve?</span></summary>
-            <div class="faq-panel"><p class="faq-a">The shop serves Gray, Jones County, and the Macon and Milledgeville area.</p></div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-q">How do I request a quote from Gray Commercial Tire and Auto?</span></summary>
-            <div class="faq-panel"><p class="faq-a">Call (478) 936-0014 Monday through Friday, 8 AM to 6 PM, or submit the quote form on this page. The form asks for your name and phone number. The shop does not publish an email address.</p></div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-q">Is Gray Commercial Tire and Auto open on Saturday or Sunday?</span></summary>
-            <div class="faq-panel"><p class="faq-a">No. Sat-Sun: Closed. Weekday hours are Monday through Friday, 8 AM to 6 PM.</p></div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-q">Does Gray Commercial Tire and Auto offer roadside service?</span></summary>
-            <div class="faq-panel"><p class="faq-a">Yes. The shop offers roadside service.</p></div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="hours" aria-labelledby="hours-heading">
-      <div class="wrap">
-        <p class="eyebrow">Visit</p>
-        <h2 id="hours-heading">Hours and location</h2>
-        <p class="intro">Gray Commercial Tire and Auto, 121 Homer Roberts Rd, Gray, GA 31032. The shop serves Gray, Jones County, and the Macon and Milledgeville area.</p>
-        <div class="photo-slot light wide">
-          <svg class="photo-wheel" viewBox="0 0 200 200" aria-hidden="true">
-            <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="8"/>
-            <circle cx="100" cy="100" r="18" fill="none" stroke="currentColor" stroke-width="8"/>
-            <path d="M100 22v28M100 150v28M22 100h28M150 100h28M45 45l18 18M137 45l-18 18M45 155l18-18M137 155l-18-18" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-          </svg>
-          <div class="photo-copy" data-nosnippet>
-            <p><span class="mark">[Shop photo placeholder — interior or work area]</span></p>
-            <p>Replace this frame with a second photo of this shop before launch.</p>
-          </div>
-        </div>
-        <div class="hours-layout">
-          <div>
-            <div class="hours-lockup">
-              <p class="hours-days">Monday–Friday</p>
-              <p class="hours-big">8 AM–6 PM</p>
-              <p class="hours-closed">Sat-Sun: Closed</p>
-            </div>
-            <table class="hours-table">
-              <caption class="sr-only">Shop hours</caption>
-              <tbody>
-                <tr><th scope="row">Monday</th><td>8 AM–6 PM</td></tr>
-                <tr><th scope="row">Tuesday</th><td>8 AM–6 PM</td></tr>
-                <tr><th scope="row">Wednesday</th><td>8 AM–6 PM</td></tr>
-                <tr><th scope="row">Thursday</th><td>8 AM–6 PM</td></tr>
-                <tr><th scope="row">Friday</th><td>8 AM–6 PM</td></tr>
-                <tr><th scope="row">Sat-Sun</th><td>Closed</td></tr>
-              </tbody>
-            </table>
-            <p>Sat-Sun: Closed. Structured hours list Monday through Friday, 8 AM to 6 PM, only.</p>
-            <address>
-              <strong>Gray Commercial Tire and Auto</strong><br>
-              121 Homer Roberts Rd<br>
-              Gray, GA 31032
-            </address>
-            <p class="fine">Main number</p>
-            <p class="phone-line"><a href="tel:+14789360014">(478) 936-0014</a></p>
-          </div>
-          <div class="map-panel">
-            <div>
-              <p class="eyebrow">Map</p>
-              <p class="map-address"><strong>Gray Commercial Tire and Auto</strong><br>121 Homer Roberts Rd<br>Gray, GA 31032</p>
-            </div>
-            <div class="map-frame" data-map-frame></div>
-            <div class="map-actions">
-              <button class="btn btn-primary" type="button" data-load-map>Show map</button>
-              <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=121+Homer+Roberts+Rd%2C+Gray%2C+GA+31032" target="_blank" rel="noopener noreferrer">Directions<span class="sr-only"> (opens in a new tab)</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="contact" aria-labelledby="contact-heading">
+    <section class="section section-dark band reveal" id="contact" aria-labelledby="contact-heading">
       <div class="wrap">
         <div class="contact-layout">
           <div class="contact-copy">
             <p class="eyebrow">Ask the shop</p>
-            <h2 id="contact-heading">Request a quote</h2>
-            <p class="intro">Ask about a vehicle or a job. Name and phone are required. The shop does not publish an email address, so this form is the way to write in.</p>
+            <h2 id="contact-heading">Get a quote</h2>
+            <p class="intro">Ask about a vehicle or a job. Name and phone are required.</p>
+            <p>The shop does not publish an email address, so this form is the way to write in.</p>
             <p class="fine">Main number</p>
             <p class="phone-line"><a href="tel:+14789360014">(478) 936-0014</a></p>
             <p>Monday through Friday, 8 AM to 6 PM. Sat-Sun: Closed.</p>
             <p>121 Homer Roberts Rd, Gray, GA 31032</p>
             <p><a href="https://facebook.com/620062815120284" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only"> (opens in a new tab)</span></a></p>
           </div>
-          <form class="form-card" name="quote" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field" aria-describedby="form-note">
+                    <form class="form-card" name="quote" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field" aria-describedby="form-note">
             <input type="hidden" name="form-name" value="quote">
             <p class="hp">
               <label>Do not fill this out: <input name="bot-field" type="text" tabindex="-1" autocomplete="off" maxlength="100"></label>
@@ -555,8 +408,197 @@
           </form>
         </div>
       </div>
+      <div class="shape" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none"><path fill="#ffffff" d="M0,72 L1440,0 L1440,72 Z"/></svg></div>
     </section>
+
+    <section class="section band reveal" id="details" aria-labelledby="details-heading">
+      <div class="wrap">
+        <p class="eyebrow">Right here in Gray</p>
+        <h2 id="details-heading">Shop details</h2>
+        <div class="offer-grid">
+          <article class="offer">
+            <h3>Tires and repair at one address</h3>
+            <p>121 Homer Roberts Rd in Gray.</p>
+            <details class="more">
+              <summary>Learn more</summary>
+              <p>Passenger, commercial, and agricultural tires and wheels, the mechanical services on this page, and roadside service are offered at 121 Homer Roberts Rd in Gray.</p>
+            </details>
+          </article>
+          <article class="offer">
+            <h3>Weekday hours are posted</h3>
+            <p>Monday through Friday, 8 AM to 6 PM. Sat-Sun: Closed.</p>
+          </article>
+          <article class="offer">
+            <h3>About 4.9 stars on Google</h3>
+            <p>The public rating is about 4.9 stars.</p>
+            <details class="more">
+              <summary>Learn more</summary>
+              <p>The public Google rating is about 4.9 stars. The review count is still <span class="mark">[review count placeholder]</span>.</p>
+            </details>
+          </article>
+          <article class="offer">
+            <h3>Towns the shop serves</h3>
+            <p>Gray, Jones County, Macon, and Milledgeville.</p>
+            <details class="more">
+              <summary>Learn more</summary>
+              <p>The shop serves Gray, Jones County, and the Macon and Milledgeville area.</p>
+            </details>
+          </article>
+        </div>
+      </div>
+      <div class="shape" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#161d24" d="M0,18 C480,78 960,4 1440,46 L1440,80 L0,80 Z"/></svg></div>
+    </section>
+
+    <section class="section section-dark band reveal" id="hours" aria-labelledby="hours-heading">
+      <div class="wrap">
+        <p class="eyebrow">Visit</p>
+        <h2 id="hours-heading">Hours and location</h2>
+        <p class="intro">121 Homer Roberts Rd, Gray, GA 31032.</p>
+        <details class="more">
+          <summary>Learn more</summary>
+          <p>Gray Commercial Tire and Auto, 121 Homer Roberts Rd, Gray, GA 31032. The shop serves Gray, Jones County, and the Macon and Milledgeville area.</p>
+          <p>Sat-Sun: Closed. Structured hours list Monday through Friday, 8 AM to 6 PM, only.</p>
+        </details>
+        <div class="photo-slot light wide photo-slim">
+          <svg class="photo-wheel" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="8"/>
+            <circle cx="100" cy="100" r="18" fill="none" stroke="currentColor" stroke-width="8"/>
+            <path d="M100 22v28M100 150v28M22 100h28M150 100h28M45 45l18 18M137 45l-18 18M45 155l18-18M137 155l-18-18" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <div class="photo-copy" data-nosnippet>
+            <p><span class="mark">[Shop photo placeholder — interior or work area]</span></p>
+            <p>Replace this frame with a second photo of this shop before launch.</p>
+          </div>
+        </div>
+        <div class="hours-layout">
+          <div>
+            <div class="hours-lockup">
+              <p class="hours-days">Monday–Friday</p>
+              <p class="hours-big">8 AM–6 PM</p>
+              <p class="hours-closed">Sat-Sun: Closed</p>
+            </div>
+            <table class="hours-table">
+              <caption class="sr-only">Shop hours</caption>
+              <tbody>
+                <tr><th scope="row">Monday</th><td>8 AM–6 PM</td></tr>
+                <tr><th scope="row">Tuesday</th><td>8 AM–6 PM</td></tr>
+                <tr><th scope="row">Wednesday</th><td>8 AM–6 PM</td></tr>
+                <tr><th scope="row">Thursday</th><td>8 AM–6 PM</td></tr>
+                <tr><th scope="row">Friday</th><td>8 AM–6 PM</td></tr>
+                <tr><th scope="row">Sat-Sun</th><td>Closed</td></tr>
+              </tbody>
+            </table>
+            <address>
+              <strong>Gray Commercial Tire and Auto</strong><br>
+              121 Homer Roberts Rd<br>
+              Gray, GA 31032
+            </address>
+            <p class="fine">Main number</p>
+            <p class="phone-line"><a href="tel:+14789360014">(478) 936-0014</a></p>
+          </div>
+          <div class="map-panel">
+            <div>
+              <p class="eyebrow">Map</p>
+              <p class="map-address"><strong>Gray Commercial Tire and Auto</strong><br>121 Homer Roberts Rd<br>Gray, GA 31032</p>
+            </div>
+            <div class="map-frame" data-map-frame></div>
+            <div class="map-actions">
+              <button class="btn btn-primary" type="button" data-load-map>Show map</button>
+              <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=121+Homer+Roberts+Rd%2C+Gray%2C+GA+31032" target="_blank" rel="noopener noreferrer">Directions<span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shape" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none"><path fill="#ffffff" d="M0,20 C420,72 980,0 1440,40 L1440,72 L0,72 Z"/></svg></div>
+    </section>
+
+    <section class="section band reveal" id="reviews" aria-labelledby="reviews-heading">
+      <div class="wrap">
+        <p class="eyebrow">Google</p>
+        <h2 id="reviews-heading">Google rating</h2>
+        <p class="rating-display"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gray+Commercial+Tire+and+Auto%2C+121+Homer+Roberts+Rd%2C+Gray%2C+GA+31032" target="_blank" rel="noopener noreferrer">4.9★ on Google<span class="sr-only"> (opens in a new tab)</span></a></p>
+        <details class="more">
+          <summary>Learn more</summary>
+          <p>The Google rating is about 4.9 stars. Google review count: <span class="mark">[review count placeholder]</span>. Review wording is not printed here until it is copied from the Google listing.</p>
+        </details>
+        <div class="review-grid">
+          <div class="review-card" data-nosnippet>
+            <p><span class="mark">[Customer review placeholder]</span></p>
+            <p>Review slot 1 of 3. Paste a Google review here before launch.</p>
+          </div>
+          <div class="review-card" data-nosnippet>
+            <p><span class="mark">[Customer review placeholder]</span></p>
+            <p>Review slot 2 of 3. Paste a Google review here before launch.</p>
+          </div>
+          <div class="review-card" data-nosnippet>
+            <p><span class="mark">[Customer review placeholder]</span></p>
+            <p>Review slot 3 of 3. Paste a Google review here before launch.</p>
+          </div>
+        </div>
+      </div>
+      <div class="shape" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none"><path fill="#dc143c" d="M0,72 L1440,0 L1440,72 Z"/></svg></div>
+    </section>
+
+    <section class="cta-band band reveal" id="cta" aria-labelledby="cta-heading">
+      <div class="wrap">
+        <h2 id="cta-heading">Need a tire today? Call us</h2>
+        <a class="btn" href="tel:+14789360014">Call (478) 936-0014</a>
+      </div>
+      <div class="shape" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#ffffff" d="M0,24 C360,70 1080,0 1440,36 L1440,70 L0,70 Z"/></svg></div>
+    </section>
+
+    <section class="section reveal" id="faq" aria-labelledby="faq-heading">
+      <div class="wrap">
+        <p class="eyebrow">Answers</p>
+        <h2 id="faq-heading">Questions</h2>
+        <div class="faq-list">
+          <details class="faq">
+            <summary><span class="faq-q">Where is Gray Commercial Tire and Auto?</span></summary>
+            <div class="faq-panel"><p class="faq-a">Gray Commercial Tire and Auto is at 121 Homer Roberts Rd, Gray, GA 31032.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="faq-q">What is the phone number for Gray Commercial Tire and Auto?</span></summary>
+            <div class="faq-panel"><p class="faq-a">The main number is (478) 936-0014.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="faq-q">What hours is Gray Commercial Tire and Auto open?</span></summary>
+            <div class="faq-panel"><p class="faq-a">Monday through Friday, the shop is open from 8 AM to 6 PM. Sat-Sun: Closed.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="faq-q">What services does Gray Commercial Tire and Auto offer?</span></summary>
+            <div class="faq-panel"><p class="faq-a">The shop offers passenger, commercial, and agricultural tires and wheels, oil changes, brakes, front end work, diagnostics, alignments, lift and leveling kits, bumpers, tire balancing, tire rotation, suspension service, general mechanical repair, and roadside service.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="faq-q">Does Gray Commercial Tire and Auto work on commercial and agricultural tires?</span></summary>
+            <div class="faq-panel"><p class="faq-a">Yes. The shop works on commercial tires and wheels and on agricultural tires and wheels, along with passenger tires and wheels.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="faq-q">Which areas does Gray Commercial Tire and Auto serve?</span></summary>
+            <div class="faq-panel"><p class="faq-a">The shop serves Gray, Jones County, and the Macon and Milledgeville area.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="faq-q">How do I request a quote from Gray Commercial Tire and Auto?</span></summary>
+            <div class="faq-panel"><p class="faq-a">Call (478) 936-0014 Monday through Friday, 8 AM to 6 PM, or submit the quote form on this page. The form asks for your name and phone number. The shop does not publish an email address.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="faq-q">Is Gray Commercial Tire and Auto open on Saturday or Sunday?</span></summary>
+            <div class="faq-panel"><p class="faq-a">No. Sat-Sun: Closed. Weekday hours are Monday through Friday, 8 AM to 6 PM.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="faq-q">Does Gray Commercial Tire and Auto offer roadside service?</span></summary>
+            <div class="faq-panel"><p class="faq-a">Yes. The shop offers roadside service.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+
+  <div class="dock" role="region" aria-label="Call or get a quote">
+    <a class="btn btn-primary" href="tel:+14789360014">Call</a>
+    <a class="btn btn-secondary" href="#contact">Get a quote</a>
+  </div>
 
   <footer class="site-footer">
     <div class="wrap footer-grid">
@@ -580,7 +622,7 @@
           <a href="#reviews">Google rating</a>
           <a href="#faq">Questions</a>
           <a href="#hours">Hours and location</a>
-          <a href="#contact">Request a quote</a>
+          <a href="#contact">Get a quote</a>
         </div>
       </nav>
     </div>
