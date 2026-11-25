@@ -449,6 +449,7 @@ p + p { margin-top: 0.85rem; }
   padding: 2.75rem 0 3.75rem;
   background: var(--carbon-950);
   color: var(--white);
+  border-bottom: 4px solid var(--crimson);
 }
 
 .hero-bg {
@@ -774,98 +775,6 @@ p + p { margin-top: 0.85rem; }
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
-}
-
-/* Gas Monkey-Style Tachometer Gauge Dials Band */
-.gauge-band {
-  padding: 3.25rem 0 3.5rem;
-  background: var(--steel-100);
-  border-bottom: 1px solid var(--steel-200);
-  text-align: center;
-}
-
-.gauge-band h2 {
-  max-width: 50rem;
-  margin: 0 auto 2rem;
-  font-size: clamp(1.55rem, 2.8vw, 2.25rem);
-  color: var(--carbon-950);
-}
-
-.gauge-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.15rem;
-  max-width: 58rem;
-  margin: 0 auto;
-}
-
-.gauge-dial {
-  position: relative;
-  aspect-ratio: 1 / 1;
-  max-width: 210px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #262e3b 0%, #141820 75%);
-  box-shadow: 0 14px 30px rgba(8, 10, 13, 0.22);
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  color: var(--white);
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-@media (hover: hover) {
-  .gauge-dial:hover { transform: translateY(-4px) scale(1.02); }
-}
-
-.gauge-ring {
-  position: absolute;
-  inset: 8px;
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
-  transform: rotate(-90deg);
-  pointer-events: none;
-}
-
-.gauge-track {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 6;
-}
-
-.gauge-arc {
-  fill: none;
-  stroke: var(--crimson-vivid);
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.gauge-inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-}
-
-.gauge-num {
-  font-family: var(--font-cond);
-  font-size: clamp(2.1rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 0.95;
-  color: var(--white);
-}
-
-.gauge-label {
-  font-family: var(--font-cond);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--steel-300);
 }
 
 /* Midas-Inspired Dark Shield Guarantees / Standards Section */
@@ -1629,7 +1538,6 @@ input:user-invalid, textarea:user-invalid, select:user-invalid {
 }
 
 @media (min-width: 740px) {
-  .gauge-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .shield-grid { grid-template-columns: 1fr 1fr; }
   .photo-card-grid { grid-template-columns: 1fr 1fr; }
   .capability-grid { grid-template-columns: 1fr 1fr; }

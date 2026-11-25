@@ -1,6 +1,6 @@
 # Gray Commercial Tire and Auto
 
-> Local tire shop and full-service automotive repair facility located at 121 Homer Roberts Rd, Gray, GA 31032, serving passenger vehicles, commercial fleets, and agricultural equipment across Gray, Jones County, Macon, and Milledgeville, Georgia.
+> Local commercial and passenger tire shop and full-service automotive repair facility located at 121 Homer Roberts Rd, Gray, GA 31032, serving drivers, pickups, and commercial fleets across Gray, Jones County, Macon, and Milledgeville, Georgia.
 
 ## Verified Business Facts
 
@@ -16,9 +16,8 @@
 ## Core Services
 
 ### Tires and Wheels
-- Passenger tires and wheels (cars, SUVs, light trucks)
-- Commercial tires and wheels (work trucks, fleet and commercial vehicles)
-- Agricultural tires and wheels (tractors and farm equipment)
+- Commercial tires and wheels (work trucks, vans, and fleet vehicles)
+- Passenger tires and wheels (cars, crossovers, SUVs, and light trucks)
 - Tire balancing
 - Tire rotation
 
@@ -41,7 +40,7 @@
 ## Site Pages
 
 - [Home](index.html): Overview, quote request form, hours, location, and FAQs
-- [Tires & Wheels](tires-and-wheels.html): Passenger, commercial, and agricultural tires, balancing, and rotation
+- [Tires & Wheels](tires-and-wheels.html): Commercial and passenger tires, wheels, balancing, and rotation
 - [Auto Repair & Alignments](auto-repair.html): Brakes, alignments, front end, suspension, diagnostics, oil changes, and mechanical repair
 - [Lift Kits & Truck Upgrades](truck-upgrades.html): Lift kits, leveling kits, and bumpers
 - [Roadside Service](roadside-service.html): Away-from-shop roadside support in Middle Georgia

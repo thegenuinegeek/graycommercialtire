@@ -1,11 +1,11 @@
 {
   "name": "Gray Commercial Tire and Auto",
   "short_name": "Gray Tire & Auto",
-  "description": "Passenger, commercial, and agricultural tires, brakes, alignments, mechanical repair, lift kits, and roadside service in Gray, GA.",
+  "description": "Commercial and passenger tires, brakes, alignments, mechanical repair, lift kits, and roadside service in Gray, GA.",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#141b22",
-  "theme_color": "#141b22",
+  "background_color": "#080a0d",
+  "theme_color": "#080a0d",
   "icons": [
     {
       "src": "img/apple-touch-icon.png",

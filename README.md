@@ -17,7 +17,7 @@ The quote form on `index.html` is configured for Netlify Forms (`data-netlify="t
 ## Pages & AIO Files
 
 - `index.html` — Main landing page (`TireShop` + `AutoRepair` + `FAQPage` JSON-LD)
-- `tires-and-wheels.html` — Passenger, commercial, and agricultural tires, balancing, and rotation
+- `tires-and-wheels.html` — Commercial and passenger tires, wheels, balancing, and rotation
 - `auto-repair.html` — Brakes, wheel alignments, front end, suspension, diagnostics, oil changes, and mechanical repair
 - `truck-upgrades.html` — Lift kits, leveling kits, and bumpers
 - `roadside-service.html` — Roadside service across Gray, Jones County, Macon, and Milledgeville
