@@ -18,13 +18,13 @@ All visible `[placeholder]` markers and draft notices have been removed from the
 
 ## 2. Google Business Profile, Map Pin & Reviews
 
-- **Verified GBP URL & Pin:** Currently `index.html` links `"View Listing & Reviews on Google"` to a Maps search query, and the JSON-LD `geo` coordinates (`32.962841`, `-83.578874`) are U.S. Census Bureau interpolated coordinates. Confirm the exact rooftop pin in Google Maps and add `"hasMap"` with the verified Place URL.
+- **Verified GBP URL & Pin:** Currently `index.html` links `"Read Reviews on Google"` to a Maps search query, and the JSON-LD `geo` coordinates (`32.962841`, `-83.578874`) are U.S. Census Bureau interpolated coordinates. Confirm the exact rooftop pin in Google Maps and add `"hasMap"` with the verified Place URL.
 - **Review Count & Customer Quotes:** Currently the site displays the confirmed `4.9★ on Google` rating without inventing a review count or testimonials. Once you confirm the exact Google review count and select real customer reviews from Google, you can add `aggregateRating` to the JSON-LD (`ratingValue: "4.9"`, `reviewCount: "<confirmed>"`) and display verbatim quotes.
 
-## 3. Optional Trust & Visual Upgrades (Once Provided by the Shop)
+## 3. Photography & Shop-Specific Details
 
-- **Shop & Fleet Photography:** Adding 2–4 real WebP photos (storefront/bays on Homer Roberts Rd, service truck/roadside rig, tire/alignment bay) will further elevate visual trust.
-- **Confirmed Brands & Capabilities:** Tire brands stocked/ordered, fleet account/billing details, warranties, certifications (e.g., ASE/TIA), years in business, roadside coverage radius/after-hours details, and a vanity Facebook URL (currently `https://facebook.com/620062815120284`) are omitted until verified.
+- **Photography:** Unbranded atmospheric garage, tire, brake, lifted pickup, and roadside WebP visuals (`img/hero-garage.webp`, `img/card-tires.webp`, `img/card-repair.webp`, `img/card-trucks.webp`, `img/card-roadside.webp`) are included for visual impact without claiming to depict the building exterior. Swap in on-site photos of 121 Homer Roberts Rd and shop service trucks anytime.
+- **Confirmed Brands & Capabilities:** Tire brands stocked/ordered, fleet account/billing details, warranties, certifications (e.g., ASE/TIA), years in business, roadside coverage radius/after-hours details, and a vanity Facebook URL (currently `https://facebook.com/620062815120284`) remain omitted until verified.
 
 ## 4. Netlify Notification Email
 

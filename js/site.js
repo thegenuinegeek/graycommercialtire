@@ -1,6 +1,9 @@
 (function () {
   "use strict";
 
+  document.documentElement.classList.add("js");
+
+  // Mobile Menu Toggle
   var toggle = document.querySelector(".menu-toggle");
   var nav = document.getElementById("site-nav");
 
@@ -28,43 +31,60 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.matchMedia("(min-width: 960px)").matches) setMenu(false);
+      if (window.matchMedia("(min-width: 980px)").matches) setMenu(false);
     });
   }
 
-  var header = document.getElementById("site-header");
-  var heroLogo = document.getElementById("hero-logo");
-  var sentinel = document.querySelector(".top-sentinel");
-  var logoLink = header ? header.querySelector(".logo") : null;
+  // Midas-Style Hero Action Stack Accordion
+  var drawers = document.querySelectorAll(".action-drawer");
+  if (drawers.length) {
+    Array.prototype.forEach.call(drawers, function (drawer) {
+      var btn = drawer.querySelector(".drawer-toggle");
+      var body = drawer.querySelector(".drawer-body");
+      var sign = drawer.querySelector(".drawer-sign");
+      if (!btn || !body) return;
 
-  function setHeaderLogo(show) {
-    if (!header) return;
-    header.classList.toggle("has-logo", show);
-    if (logoLink) {
-      logoLink.setAttribute("aria-hidden", show ? "false" : "true");
-      if (show) logoLink.removeAttribute("tabindex");
-      else logoLink.setAttribute("tabindex", "-1");
-    }
+      btn.addEventListener("click", function () {
+        var isExpanded = btn.getAttribute("aria-expanded") === "true";
+        Array.prototype.forEach.call(drawers, function (other) {
+          var oBtn = other.querySelector(".drawer-toggle");
+          var oBody = other.querySelector(".drawer-body");
+          var oSign = other.querySelector(".drawer-sign");
+          if (!oBtn || !oBody) return;
+          var shouldOpen = other === drawer ? !isExpanded : false;
+          oBtn.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+          oBody.hidden = !shouldOpen;
+          if (oSign) oSign.textContent = shouldOpen ? "−" : "+";
+        });
+      });
+    });
   }
 
-  if (header && "IntersectionObserver" in window) {
-    if (sentinel) {
-      var solidObserver = new IntersectionObserver(function (entries) {
-        header.classList.toggle("is-solid", !entries[0].isIntersecting);
-      }, { threshold: 0 });
-      solidObserver.observe(sentinel);
-    } else {
-      header.classList.add("is-solid");
-    }
-    if (heroLogo) {
-      var headerHeight = Math.round(header.getBoundingClientRect().height) || 78;
-      var logoObserver = new IntersectionObserver(function (entries) {
-        setHeaderLogo(!entries[0].isIntersecting);
-      }, { threshold: 0, rootMargin: "-" + headerHeight + "px 0px 0px 0px" });
-      logoObserver.observe(heroLogo);
-    } else {
-      setHeaderLogo(true);
-    }
+  // Hero Quick Quote Launcher -> smoothly jumps to #contact & pre-fills service + vehicle
+  var quickForm = document.getElementById("hero-quick-quote");
+  if (quickForm) {
+    quickForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var quickService = document.getElementById("quick-service");
+      var quickVehicle = document.getElementById("quick-vehicle");
+      var mainService = document.getElementById("quote-service");
+      var mainVehicle = document.getElementById("quote-vehicle");
+      var mainName = document.getElementById("quote-name");
+      var contactSection = document.getElementById("contact");
+
+      if (quickService && mainService && quickService.value) {
+        mainService.value = quickService.value;
+      }
+      if (quickVehicle && mainVehicle && quickVehicle.value.trim()) {
+        mainVehicle.value = quickVehicle.value.trim();
+      }
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+      if (mainName) {
+        setTimeout(function () { mainName.focus({ preventScroll: true }); }, 350);
+      }
+    });
   }
 
   // Live Open / Closed indicator in Georgia local time (America/New_York)
@@ -88,15 +108,15 @@
       Array.prototype.forEach.call(statusEls, function (el) {
         el.classList.toggle("is-open", isOpenNow);
         if (isOpenNow) {
-          el.textContent = "Open now · Closes 6 PM ET";
+          el.textContent = "Open Now · Closes 6 PM ET";
         } else if (isWeekday && hour < 8) {
-          el.textContent = "Closed now · Opens today at 8 AM";
+          el.textContent = "Closed · Opens Today 8 AM";
         } else {
-          el.textContent = "Closed now · Mon–Fri 8 AM–6 PM";
+          el.textContent = "Closed · Mon–Fri 8 AM–6 PM";
         }
       });
     } catch (_) {
-      // Leave default static hours text intact if timezone formatting is unavailable.
+      // Leave static hours text intact if timezone formatting is unavailable.
     }
   }
 
