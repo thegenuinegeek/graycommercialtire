@@ -1,7 +1,24 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: *
 Allow: /
 Disallow: /PLACEHOLDERS.md
 Disallow: /README.md
+Disallow: /thanks.html
+Disallow: /404.html
 
 # PLACEHOLDER: replace https://example.com with the production domain before launch.
 Sitemap: https://example.com/sitemap.xml

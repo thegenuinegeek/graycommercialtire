@@ -2,6 +2,16 @@
   publish = "."
   command = ""
 
+[[redirects]]
+  from = "/PLACEHOLDERS.md"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -9,3 +19,18 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"

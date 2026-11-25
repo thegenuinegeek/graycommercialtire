@@ -57,7 +57,7 @@
       header.classList.add("is-solid");
     }
     if (heroLogo) {
-      var headerHeight = Math.round(header.getBoundingClientRect().height) || 80;
+      var headerHeight = Math.round(header.getBoundingClientRect().height) || 78;
       var logoObserver = new IntersectionObserver(function (entries) {
         setHeaderLogo(!entries[0].isIntersecting);
       }, { threshold: 0, rootMargin: "-" + headerHeight + "px 0px 0px 0px" });
@@ -67,13 +67,47 @@
     }
   }
 
+  // Live Open / Closed indicator in Georgia local time (America/New_York)
+  var statusEls = document.querySelectorAll("[data-open-status]");
+  if (statusEls.length && "Intl" in window && Intl.DateTimeFormat) {
+    try {
+      var parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/New_York",
+        weekday: "short",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: false
+      }).formatToParts(new Date());
+      var map = {};
+      parts.forEach(function (part) { map[part.type] = part.value; });
+      var day = map.weekday;
+      var hour = parseInt(map.hour, 10);
+      var isWeekday = day === "Mon" || day === "Tue" || day === "Wed" || day === "Thu" || day === "Fri";
+      var isOpenNow = isWeekday && hour >= 8 && hour < 18;
+
+      Array.prototype.forEach.call(statusEls, function (el) {
+        el.classList.toggle("is-open", isOpenNow);
+        if (isOpenNow) {
+          el.textContent = "Open now · Closes 6 PM ET";
+        } else if (isWeekday && hour < 8) {
+          el.textContent = "Closed now · Opens today at 8 AM";
+        } else {
+          el.textContent = "Closed now · Mon–Fri 8 AM–6 PM";
+        }
+      });
+    } catch (_) {
+      // Leave default static hours text intact if timezone formatting is unavailable.
+    }
+  }
+
+  // Lazy-load interactive Google Map iframe on user click
   var mapButton = document.querySelector("[data-load-map]");
   if (mapButton) {
     mapButton.addEventListener("click", function () {
       var host = document.querySelector("[data-map-frame]");
       if (!host || host.querySelector("iframe")) return;
       var frame = document.createElement("iframe");
-      var query = "121 Homer Roberts Rd, Gray, GA 31032";
+      var query = "Gray Commercial Tire and Auto, 121 Homer Roberts Rd, Gray, GA 31032";
       frame.title = "Map of " + query;
       frame.src = "https://maps.google.com/maps?q=" + encodeURIComponent(query) + "&z=15&output=embed";
       frame.loading = "lazy";
@@ -86,6 +120,7 @@
     });
   }
 
+  // Scroll-reveal animation
   var revealNodes = document.querySelectorAll(".reveal");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (revealNodes.length && !reduceMotion && "IntersectionObserver" in window) {
@@ -95,7 +130,7 @@
         entry.target.classList.add("is-in");
         revealObserver.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
     Array.prototype.forEach.call(revealNodes, function (node) {
       revealObserver.observe(node);
     });
@@ -105,6 +140,22 @@
     });
   }
 
+  // Pre-select service dropdown when arriving via ?service=...#contact
+  var serviceSelect = document.getElementById("quote-service");
+  if (serviceSelect && window.location.search) {
+    var requestedService = new URLSearchParams(window.location.search).get("service");
+    if (requestedService) {
+      Array.prototype.some.call(serviceSelect.options, function (opt) {
+        if (opt.textContent === requestedService || opt.value === requestedService) {
+          serviceSelect.value = opt.value || opt.textContent;
+          return true;
+        }
+        return false;
+      });
+    }
+  }
+
+  // Local preview notice on thanks.html
   var preview = document.getElementById("thanks-preview");
   var live = document.getElementById("thanks-live");
   if (preview && live && new URLSearchParams(window.location.search).get("preview") === "local") {
@@ -112,6 +163,7 @@
     preview.hidden = false;
   }
 
+  // Netlify Forms submission handler
   var form = document.querySelector("form[name='quote']");
   if (!form) return;
 
