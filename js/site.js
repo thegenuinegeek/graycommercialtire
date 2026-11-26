@@ -35,6 +35,26 @@
     });
   }
 
+  // Hide duplicate header logo while centered hero logo is in view on homepage
+  var header = document.getElementById("site-header");
+  var heroLogo = document.getElementById("hero-logo");
+  var headerLogoLink = header ? header.querySelector(".logo") : null;
+  if (header && heroLogo && "IntersectionObserver" in window) {
+    var setHeaderLogoHidden = function (hide) {
+      header.classList.toggle("hide-header-logo", hide);
+      if (headerLogoLink) {
+        headerLogoLink.setAttribute("aria-hidden", hide ? "true" : "false");
+        if (hide) headerLogoLink.setAttribute("tabindex", "-1");
+        else headerLogoLink.removeAttribute("tabindex");
+      }
+    };
+    setHeaderLogoHidden(window.scrollY < 120);
+    var heroLogoObserver = new IntersectionObserver(function (entries) {
+      setHeaderLogoHidden(entries[0].isIntersecting);
+    }, { threshold: 0.1 });
+    heroLogoObserver.observe(heroLogo);
+  }
+
   // Midas-Style Hero Action Stack Accordion
   var drawers = document.querySelectorAll(".action-drawer");
   if (drawers.length) {
