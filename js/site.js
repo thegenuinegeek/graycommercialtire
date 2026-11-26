@@ -140,26 +140,6 @@
     }
   }
 
-  // Lazy-load interactive Google Map iframe on user click
-  var mapButton = document.querySelector("[data-load-map]");
-  if (mapButton) {
-    mapButton.addEventListener("click", function () {
-      var host = document.querySelector("[data-map-frame]");
-      if (!host || host.querySelector("iframe")) return;
-      var frame = document.createElement("iframe");
-      var query = "Gray Commercial Tire and Auto, 121 Homer Roberts Rd, Gray, GA 31032";
-      frame.title = "Map of " + query;
-      frame.src = "https://maps.google.com/maps?q=" + encodeURIComponent(query) + "&z=15&output=embed";
-      frame.loading = "lazy";
-      frame.referrerPolicy = "no-referrer-when-downgrade";
-      frame.setAttribute("width", "600");
-      frame.setAttribute("height", "360");
-      frame.setAttribute("allowfullscreen", "");
-      host.appendChild(frame);
-      mapButton.hidden = true;
-    });
-  }
-
   // Scroll-reveal animation
   var revealNodes = document.querySelectorAll(".reveal");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
